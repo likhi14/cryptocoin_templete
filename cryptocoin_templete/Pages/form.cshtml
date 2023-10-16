@@ -1,0 +1,79 @@
+﻿@page
+@model cryptocoin_templete.Pages.formModel
+@{
+}
+
+<div class="container bg-white">
+    
+    <div class="row">
+        <div class="col mx-auto">
+                <h3 class="text-center text-black"> FORM</h3>
+                <!-- Form START -->
+             <form method="post">
+                
+                    <div class="col-12">
+                    <label class="form-label" for="FName"><strong>Full Name </strong></label>
+                    <input type="text" class="form-control" id="FName" placeholder="Full Name" required>
+                    </div>
+                <div class="col-12">
+                    <label class="form-label" for="LName"><strong>Last Name</strong></label>
+                    <input type="text" class="form-control" id="LName" placeholder="Last Name" readonly>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="phone"><strong>Phone Number</strong></label>
+                    <input type="tel" class="form-control" id="phone" placeholder="phone" required>
+                </div>
+                    <div class="col-12">
+                        <label class="form-label" for="position"><strong>position</strong></label>
+                    <select class="form-control rounded-0" id="position" required>
+                            <option value="">-- Select Type --</option>
+                             <option value="AC">Accountant</option>
+                             <option value=RE>Receptionist</option>
+                             <option value=AD>Administrator</option>
+                             <option value="SV">Supervisor</option>
+                    </select>
+                    </div>
+                    <br />
+                     <div class="col-12">
+                    <label> <input type="checkbox"> Full-Time</label>
+                     
+                    <label> <input type="checkbox"> part-Time</label>
+                    <label> <input type="checkbox"> Contract</label>
+                           
+                     </div>
+                     <br />
+                    <div class="col-12">
+                    <input type="radio" name="estatus" value="Employed" />Employed
+                    <input type="radio" name="estatus" value="UnEmployed" />UnEmployed
+                    <input type="radio" name="estatus" value="Student" />Student
+                        </div>
+                        <br />
+                   <div class="col-12">
+                    <input type="file" id="myFile" name="filename">
+                   </div>
+                     
+                   <div class="col-12">
+                    <label class="form-label" for="Date"><strong>Date</strong></label>
+                    <input type="date" class="form-control" id="Date" placeholder="Date" required>
+                   </div>
+                    
+
+
+                 <div class="col-12">
+                    <label class="form-label" for="description"><strong>Description</strong></label>
+                    <textarea class="form-control" id="description" placeholder="Description" required></textarea>
+                 </div>
+                 <br />
+                    
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <center>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-warning">reset</button>
+                            </center>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>

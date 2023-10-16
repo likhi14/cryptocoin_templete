@@ -1,0 +1,65 @@
+﻿@page
+@model cryptocoin_templete.Pages.imagepreviewModel
+@{
+}
+<script>
+    function previewImage() {
+        const input = document.getElementById("imageUpload");
+        const errorText = document.getElementById("errorText");
+        const imagePreview = document.getElementById("imagePreview");
+        const preview = document.getElementById("preview");
+
+        const file = input.files[0];
+
+        if (file) {
+            const fileType = file.type;
+
+
+
+
+            if (fileType === "image/jpeg") {
+                const reader = new FileReader();
+
+
+
+
+                reader.onload = function (event) {
+                    preview.src = event.target.result;
+                    imagePreview.style.display = "block";
+                    errorText.textContent = "";
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                errorText.textContent = "Please select a valid JPEG image.";
+                input.value = ""; // Clear the input field
+                imagePreview.style.display = "none";
+            }
+        } else {
+            imagePreview.style.display = "none";
+            errorText.textContent = "";
+        }
+        if (!file) {
+            errorText.textContent = "Please select a valid image.";
+            errorText.textContent = "";
+        }
+        const limit = 1000;
+        const size = Math.round(file.size / 512);
+        if (size < limit) {
+            alert(`File size OK: ${size}`);
+        } else {
+            errorText.textContent = (`Error: File larger than 1MB (${(size / 500).toFixed(1)} MB)`);
+            throw new Error(`File too large: ${size}`);
+        }
+    }
+</script>
+<div class="container">
+    
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" id="imageUpload" accept="image/jpeg,image/jpg" onchange="previewImage()">
+        <p id="errorText" style="color: red;"></p>
+        <div id="imagePreview" style="display: none;">
+            <img id="preview" src="" alt="Image Preview" width="500">
+            </div>
+    </form>
+</div>

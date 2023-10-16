@@ -1,0 +1,67 @@
+﻿@page
+@model cryptocoin_templete.Pages.rightalignModel
+@{
+}
+<div class="container bg-white">
+
+    <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6 mx-auto">
+            <h3 class="text-center text-black"> RIGHT ALIGN FORM</h3>
+            <!-- Form START -->
+            <form method="post">
+                <div class="col-12">
+                    <label class="form-label" for="EName">Employee Name</label>
+                    <input type="text" class="form-control" id="EName" placeholder="Employee Name" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="LName">Last Name</label>
+                    <input type="text" class="form-control" id="LName" placeholder="Last Name" readonly>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label" for="position">position</label>
+                    <select class="form-control rounded-0" id="position" required>
+                        <option value="">-- Select Type --</option>
+                        <option value="AC">Accountant</option>
+                        <option value=RE>Receptionist</option>
+                        <option value=AD>Administrator</option>
+                        <option value="SV">Supervisor</option>
+                    </select>
+                </div>
+                <br />
+                <div class="col-12">
+                    <label><input type="checkbox">Full-Time</label>
+                    <label><input type="checkbox">part-Time</label>
+                    <label><input type="checkbox">Contract</label>
+
+                </div>
+                <br />
+                <div class="col-12">
+                    <input type="radio" name="estatus" value="Employed" />Employed
+                    <input type="radio" name="estatus" value="UnEmployed" />UnEmployed
+                    <input type="radio" name="estatus" value="Student" />Student
+                </div>
+                <br />
+                <div class="col-12">
+                    <input type="file" id="myFile" name="filename">
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" id="description" placeholder="Description" required></textarea>
+                </div>
+                <br />
+
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <center>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-warning">reset</button>
+                        </center>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

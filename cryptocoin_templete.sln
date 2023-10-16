@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cryptocoin_templete", "cryptocoin_templete\cryptocoin_templete.csproj", "{599F09F7-B0AE-4825-9033-C78FC4424486}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{599F09F7-B0AE-4825-9033-C78FC4424486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{599F09F7-B0AE-4825-9033-C78FC4424486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{599F09F7-B0AE-4825-9033-C78FC4424486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{599F09F7-B0AE-4825-9033-C78FC4424486}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {060DAF4E-DBC0-4F2F-9ADC-16015B23DB19}
+	EndGlobalSection
+EndGlobal

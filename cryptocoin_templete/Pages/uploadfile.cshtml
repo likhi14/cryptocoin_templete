@@ -1,0 +1,66 @@
+﻿@page
+@model cryptocoin_templete.Pages.uploadfileModel
+@{
+} 
+<div class="container">
+  <div onload="myFunction()">
+      <h2 class="text-center">upload file</h2>
+      <hr />
+      <form method="post">
+            <div class="form-group">
+                <input type="file" id="pdfUpload" accept=".pdf" onchange="previewPDF()">
+                <p id="errorText" style="color: red;"></p>
+                <div id="pdfPreview" style="display: none;">
+                    <object id="preview" data="" type="application/pdf" width="500" height="400"></object>
+                </div>
+                </div>
+        </form>
+        <script>
+            function previewPDF() {
+                const input = document.getElementById("pdfUpload");
+                const errorText = document.getElementById("errorText");
+                const pdfPreview = document.getElementById("pdfPreview");
+                const preview = document.getElementById("preview");
+
+                const file = input.files[0];
+
+                if (file) {
+                    const fileType = file.type;
+
+                    if (fileType === "application/pdf") {
+                        const fileURL = URL.createObjectURL(file);
+                        preview.data = fileURL;
+                        pdfPreview.style.display = "block";
+                        errorText.textContent = "";
+                    } else {
+                        errorText.textContent = "Please select a valid PDF file.";
+                        input.value = ""; // Clear the input field
+                        pdfPreview.style.display = "none";
+                    }
+                } else {
+                    pdfPreview.style.display = "none";
+                    errorText.textContent = "";
+                }
+                if (!file) {
+                    errorText.textContent = "Please select a valid file.";
+                    errorText.textContent = "";
+                }
+                const limit = 1000;
+                const size = Math.round(file.size / 512);
+                if (size < limit) {
+                    alert(`File size OK: ${size}`);
+                } else {
+                    errorText.textContent = (`Error: File larger than 1MB (${(size / 500).toFixed(1)} MB)`);
+                    throw new Error(`File too large: ${size}`);
+                }
+            }
+        </script>
+  </div>
+</div>
+
+
+
+
+
+        
+
